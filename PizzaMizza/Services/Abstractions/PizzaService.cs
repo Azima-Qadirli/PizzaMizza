@@ -1,4 +1,5 @@
-﻿using PizzaMizza.Models;
+﻿using PizzaMizza.Exceptions;
+using PizzaMizza.Models;
 using PizzaMizza.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,26 +9,40 @@ using System.Threading.Tasks;
 
 namespace PizzaMizza.Services.Abstractions
 {
-    public class PizzaService:IPizzaService
+    public class PizzaService : IPizzaService
     {
-        private List<Pizza> pizzas = new List<Pizza>();
+        private readonly List<Pizza> _pizzas = new List<Pizza>();
 
         public void Create(Pizza pizza)
+            =>_pizzas.Add(pizza);
+
+        public void Delete(Guid id)
         {
-            pizzas.Add(pizza);
+            Pizza pizza = GetPizzaById(id);
+            _pizzas.Remove(pizza);
         }
-        public List<Pizza> GetAllPizzas()
-        {
-            return pizzas;
-        }
+
+        public List<Pizza> GetAll()
+            => _pizzas;
+
         public Pizza GetPizzaById(Guid id)
         {
-            return pizzas.FirstOrDefault(p => p.Id == id);
+            foreach (Pizza pizza in _pizzas)
+                if (pizza.Id == id)
+                    return pizza;
+
+
+            throw new EntityNotFoundException("Pizza is not found");
         }
-         
-        List<Pizza> IService<Pizza>.GetAll()
+
+        public void Update(Guid id, Pizza pizza)
         {
-            throw new NotImplementedException();
+            Pizza updatedPizza = GetPizzaById(id);
+
+            updatedPizza.Size = pizza.Size;
+            updatedPizza.Price = pizza.Price;
+            updatedPizza.Name = pizza.Name;
+            updatedPizza.Ingredients = pizza.Ingredients;   
         }
     }
 }

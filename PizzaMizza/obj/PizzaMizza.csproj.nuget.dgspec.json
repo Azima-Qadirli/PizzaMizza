@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\test\\OneDrive\\Desktop\\c# Jet\\PizzaMizza\\PizzaMizza\\PizzaMizza.csproj": {}
+    "C:\\Users\\Nijat\\OneDrive\\Desktop\\Lessons\\PizzaMizzaAzima\\PizzaMizza\\PizzaMizza.csproj": {}
   },
   "projects": {
-    "C:\\Users\\test\\OneDrive\\Desktop\\c# Jet\\PizzaMizza\\PizzaMizza\\PizzaMizza.csproj": {
+    "C:\\Users\\Nijat\\OneDrive\\Desktop\\Lessons\\PizzaMizzaAzima\\PizzaMizza\\PizzaMizza.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\test\\OneDrive\\Desktop\\c# Jet\\PizzaMizza\\PizzaMizza\\PizzaMizza.csproj",
+        "projectUniqueName": "C:\\Users\\Nijat\\OneDrive\\Desktop\\Lessons\\PizzaMizzaAzima\\PizzaMizza\\PizzaMizza.csproj",
         "projectName": "PizzaMizza",
-        "projectPath": "C:\\Users\\test\\OneDrive\\Desktop\\c# Jet\\PizzaMizza\\PizzaMizza\\PizzaMizza.csproj",
-        "packagesPath": "C:\\Users\\test\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\test\\OneDrive\\Desktop\\c# Jet\\PizzaMizza\\PizzaMizza\\obj\\",
+        "projectPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\Lessons\\PizzaMizzaAzima\\PizzaMizza\\PizzaMizza.csproj",
+        "packagesPath": "C:\\Users\\Nijat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\Lessons\\PizzaMizzaAzima\\PizzaMizza\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\test\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nijat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

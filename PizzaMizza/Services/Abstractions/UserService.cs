@@ -10,7 +10,7 @@ namespace PizzaMizza.Services.Abstractions
     {
         private List<User> users = new List<User>();
 
-        public string Signup()
+        public string? Signup()
         {
             Console.WriteLine("Enter a username:");
             string username = Console.ReadLine();
@@ -36,15 +36,15 @@ namespace PizzaMizza.Services.Abstractions
         public bool Login()
         {
             Console.WriteLine("Dear user, please enter your username:");
-            string username = Console.ReadLine();
+            string? username = Console.ReadLine();
             Console.WriteLine("Now, enter your password:");
-            string password = Console.ReadLine();
+            string? password = Console.ReadLine();
 
             var user = users.FirstOrDefault(u => u.Name == username);
             return user != null && user.Password == password;
         }
 
-        private string IsCorrectPassword(string password)
+        private string? IsCorrectPassword(string password)
         {
             if (password.Length < 6)
             {
@@ -62,30 +62,7 @@ namespace PizzaMizza.Services.Abstractions
             }
             return null; 
         }
+       
 
-        public void AuthenticationUser()
-        {
-            throw new NotImplementedException();
-        }
-
-        string IUserService.IsCorrectPassword(string password)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<User> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Signup(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Login(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

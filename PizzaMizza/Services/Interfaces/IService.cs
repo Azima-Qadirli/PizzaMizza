@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace PizzaMizza.Services.Interfaces
 {
-    public interface IService<T>where T:Entity
+    public interface IService<T> where T:Entity
     {
-         //void SignUp();
-         //void Login();
-
-         List<T> GetAll();
+  
     }
 }

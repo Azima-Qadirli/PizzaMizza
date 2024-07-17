@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace PizzaMizza.Services.Interfaces
 {
-    public interface IPizzaService:IService<Pizza>
+    public interface IPizzaService : IService<Pizza>
     {
-        public Pizza GetPizzaById(Guid id);
-        public void Create(Pizza pizza);
-
+        void Create(Pizza pizza);
+        Pizza GetPizzaById(Guid id);
+        List<Pizza> GetAll();
+        void Update(Guid id, Pizza pizza);
+        void Delete(Guid id);
     }
 }

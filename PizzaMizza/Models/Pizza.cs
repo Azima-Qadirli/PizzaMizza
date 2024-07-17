@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaMizza.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,4 @@ namespace PizzaMizza.Models
             
         }
     }
-    public enum Size 
-    {
-        Small,
-        Medium,
-        Large
-    }
-
-
 }

@@ -9,12 +9,9 @@ using System.Threading.Tasks;
 
 namespace PizzaMizza.Services.Interfaces
 {
-    public interface IUserService:IService<User>
+    public interface IUserService : IService<User>
     {
-         public void AuthenticationUser();
-         public string Signup(User user);
-        public bool Login(string username, string password);
-        public  string IsCorrectPassword(string password);
-
+        string Signup();
+        bool Login();
     }
 }

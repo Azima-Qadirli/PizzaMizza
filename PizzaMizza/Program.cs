@@ -1,4 +1,5 @@
 ﻿using PizzaMizza.Models;
+using PizzaMizza.Models.Enums;
 using PizzaMizza.Services.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,6 @@ class Program
             MainMenu(pizzaService);
         }
     }
-
     public static bool AuthenticateUser(UserService userService)
     {
         while (true)
@@ -60,7 +60,6 @@ class Program
             }
         }
     }
-
     static void MainMenu(PizzaService pizzaService)
     {
         while (true)
@@ -87,10 +86,9 @@ class Program
             }
         }
     }
-
     static void ShowAllPizzas(PizzaService pizzaService)
     {
-        var pizzas = pizzaService.GetAllPizzas();
+        var pizzas = pizzaService.GetAll();
 
         foreach (var pizza in pizzas)
         {
@@ -126,14 +124,13 @@ class Program
             }
         }
     }
-
     static void CreateNewPizza(PizzaService pizzaService)
     {
         Console.WriteLine("Enter the name of the pizza:");
         string name = Console.ReadLine();
 
         Console.WriteLine("Choose the size of the pizza (0 for Small, 1 for Medium, 2 for Large):");
-        Size size = (Size)int.Parse(Console.ReadLine());
+        Enum.TryParse(typeof(Size), Console.ReadLine(), out var size);
 
         Console.WriteLine("Enter the price of the pizza:");
         decimal price = decimal.Parse(Console.ReadLine());
@@ -143,7 +140,7 @@ class Program
 
         Pizza pizza = new Pizza(name, Guid.NewGuid())
         {
-            Size = size,
+            Size = (Size)size,
             Price = price,
             Ingredients = ingredients
         };
